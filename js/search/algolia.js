@@ -42,7 +42,7 @@ $(function () {
   var search = instantsearch({
     appId: algolia.appId,
     apiKey: algolia.apiKey,
-    indexName: algolia.indexName,
+    indexName: algolia.indexName
     searchParameters: {
       hitsPerPage: algolia.hits.per_page || 10
     },
