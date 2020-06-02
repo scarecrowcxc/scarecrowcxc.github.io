@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>idea 新建项目spring.io找不到了（亲测）</title>
+      <link href="/2019/08/06/springboot/"/>
+      <url>/2019/08/06/springboot/</url>
+      
+        <content type="html"><![CDATA[<p>1:原因：spring boot插件未启用</p><p>2：打开idea 依次打开 settings》plugins》搜索spring boot 勾选即可，重启idea生效；</p><p>3：效果图如下<br><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-065229.png"  alt=""><br><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-065245.png"  alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idea </tag>
+            
+            <tag> spring.io </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>日常开发本人常用idea插件分享（二）</title>
       <link href="/2019/07/23/%E6%8F%92%E4%BB%B6%E5%88%86%E4%BA%AB%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
       <url>/2019/07/23/%E6%8F%92%E4%BB%B6%E5%88%86%E4%BA%AB%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
@@ -46,7 +73,7 @@
       <link href="/2019/07/02/npoint/"/>
       <url>/2019/07/02/npoint/</url>
       
-        <content type="html"><![CDATA[<p>此处是”老外”的BB叨：<a href="https://github.com/springfox/springfox/issues/2265" target="_blank" rel="noopener">https://github.com/springfox/springfox/issues/2265</a><br>异常截图：<img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053326.png"  alt=""><br>进源码发现 <img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053359.png"  alt=""><br>在使用@ApiModelProperty(value = “xx” , example=”xx “)注解时，会校验实体属性类型，若该类型是Integer，example默认为””导致转换异常。<br>解决办法（测试有效）：<br>排除springfox-swagger2 引入的swagger-annotations、swagger-models 1.5.20版本，手动引入1.5.21版本的jar。</p><pre><code>&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;    &lt;exclusions&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;        &lt;/exclusion&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;        &lt;/exclusion&gt;    &lt;/exclusions&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>此处是”老外”的BB叨：<a href="https://github.com/springfox/springfox/issues/2265" target="_blank" rel="noopener">https://github.com/springfox/springfox/issues/2265</a><br>异常截图：<img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053326.png"  alt=""><br>进源码发现 <img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053359.png"  alt=""><br>在使用@ApiModelProperty(value = “xx” , example=”xx “)注解时，会校验实体属性类型，若该类型是Integer，example默认为””导致转换异常。<br>解决办法（测试有效）：排除springfox-swagger2 引入的swagger-annotations、swagger-models 1.5.20版本，手动引入1.5.21版本的jar。</p><pre><code>&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;    &lt;exclusions&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;        &lt;/exclusion&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;        &lt;/exclusion&gt;    &lt;/exclusions&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;</code></pre>]]></content>
       
       
       <categories>
@@ -59,6 +86,108 @@
         <tags>
             
             <tag> swagger </tag>
+            
+            <tag> idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>升级swagger2.9.2 报错： java.lang.NumberFormatException 解决</title>
+      <link href="/2019/07/02/swagger/"/>
+      <url>/2019/07/02/swagger/</url>
+      
+        <content type="html"><![CDATA[<p>此处是”老外”的BB叨：<a href="https://github.com/springfox/springfox/issues/2265" target="_blank" rel="noopener">https://github.com/springfox/springfox/issues/2265</a><br>异常截图：<img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053326.png"  alt=""><br>进源码发现 <img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053359.png"  alt=""><br>在使用@ApiModelProperty(value = “xx” , example=”xx “)注解时，会校验实体属性类型，若该类型是Integer，example默认为””导致转换异常。<br>解决办法（测试有效）：排除springfox-swagger2 引入的swagger-annotations、swagger-models 1.5.20版本，手动引入1.5.21版本的jar。</p><pre><code>&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;    &lt;exclusions&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;        &lt;/exclusion&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;        &lt;/exclusion&gt;    &lt;/exclusions&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> swagger </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> swagger </tag>
+            
+            <tag> idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录mysql查询过去十二个月中每个月的数据情况（含本月）</title>
+      <link href="/2019/03/01/mysql/"/>
+      <url>/2019/03/01/mysql/</url>
+      
+        <content type="html"><![CDATA[<p>思路：创建视图，查询过去的12个月；当然，也可以使用存储过程遍历的把12个月插入到一个临时表中。</p><p>一、以视图的形式实现</p><p>1.1创建过去十二个月的视图SQL</p><p>CREATE<br>    ALGORITHM = UNDEFINED<br>    DEFINER = <code>root</code>@<code>%</code><br>    SQL SECURITY DEFINER<br>VIEW <code>year_month_view</code> AS<br>    SELECT DATE_FORMAT(CURDATE(), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 1 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 2 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 3 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 4 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 5 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 6 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 7 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 8 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 9 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 10 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>    UNION SELECT DATE_FORMAT((CURDATE() - INTERVAL 11 MONTH), ‘%Y-%m’) AS <code>year_month</code><br>关于sql中用到的视图语法说明及视图说明：</p><p>a、ALGORITHM可取三个值：MERGE、TEMPTABLE或UNDEFINED。</p><p>如果没有ALGORITHM子句，默认算法是UNDEFINED（未定义的）。算法会影响MySQL处理视图的方式。</p><p>对于MERGE，会将引用视图的语句的文本与视图定义合并起来，使得视图定义的某一部分取代语句的对应部分。</p><p>对于TEMPTABLE，视图的结果将被置于临时表中，然后使用它执行语句。</p><p>对于UNDEFINED，MySQL自己选择所要使用的算法。如果可能，它倾向于MERGE而不是TEMPTABLE，</p><p>这是因为MERGE通常更有效，而且如果使用了临时表，视图是不可更新的。</p><p>b、DEFINER 表示按定义者拥有的权限来执行（指定视图创建者）</p><pre><code>INVOKER 表示用调用者的权限来执行。默认情况下，系统指定为DEFINER </code></pre><p>c、SQL SECURITY DEFINER：指定视图查询数据时的安全验证方式；</p><p>语法一<br>DATE_FORMAT(date,format)<br>date 参数是合法的日期。format 规定日期/时间的输出格式。<br>语法二<br>CURDATE()函数返回当前的日期。<br>INTERVAL </p><p>详情链接：</p><p>效果如图：创建完成查看视图sql</p><p>select ym.year_month from year_month_view ym group by ym.year_month;<br><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-060737.png"  alt=""><br>1.2 关联查询数据sql</p><p>SELECT<br>    ymv.year_month yearMonth,<br>    ifnull(pi.totalPay, 0) totalPay<br>FROM<br>    year_month_view ymv<br>LEFT JOIN (<br>    SELECT<br>        DATE_FORMAT(pi.in_Issu_time, ‘%Y-%m’) yearMonth,<br>        SUM(pi.total_Tax_included_Am) totalPay<br>    FROM<br>        pj_invoice pi<br>    WHERE<br>        DATE_FORMAT(pi.in_Issu_time, ‘%Y-%m’) &gt; DATE_FORMAT(<br>            date_sub(curdate(), INTERVAL 12 MONTH),<br>            ‘%Y-%m’<br>        )<br>    GROUP BY<br>        yearMonth<br>) pi ON ymv.year_month = pi.yearMonth<br>GROUP BY<br>    ymv.year_month<br>说明：sql对应in_Issu_time是我业务表中对应的某个时间，具体业务是查询过去一年中每个月的数据的总额。</p><p>pj对应的要查询的数据业务表、year_month_view视图、total_Tax_included_Am每条记录的总额度、计算出的总额totalPay</p><p>DATE_SUB(d,INTERVAL expr type)函数返回起始日期d减去一个时间段后的日期。</p><p>expr是一个表达式，用来指定从起始日期添加或减去的时间间隔值。</p><p>expr是一个字符串。对于负值的时间间隔，它可以用一个负号“-”开头。</p><p>expr表达式与后面的间隔类型type对应。</p><p>MySQL中的日期间隔类型如下表所示：<br><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-060805.png"  alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录 maven项目添加自定义jar包</title>
+      <link href="/2019/02/18/maven%E8%87%AA%E5%AE%9A%E4%B9%89jar/"/>
+      <url>/2019/02/18/maven%E8%87%AA%E5%AE%9A%E4%B9%89jar/</url>
+      
+        <content type="html"><![CDATA[<p>maven项目添加自定义jar包<br>1.确保在cmd当中可以正确使用mvn命令（通过mvn -v可以验证），然后使用如下命令：</p><p>mvn install:install-file -Dfile=包路径\xx.jar -DgroupId=com.yangjian.farme(可自定义) -DartifactId=jsper(可自定义) -Dversion=12.1(可自定义版本号) -Dpackaging=jar</p><p>说明：-Dfile参数指你自定义JAR包文件所在的路径，并依次指定了自定义的GroupId、ArtifactId和Version信息。<br>通过这种方式，可以简单快速地将第三方JAR包安装到本地仓库中供Maven项目依赖使用。例如：<br>2.添加项目依赖即可<br>       <dependency><br>        <groupId>com.yangjian.farme</groupId><br>        <artifactId>jsper</artifactId><br>        <version>12.1</version><br>       </dependency></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> maven </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>idea 去除所有未引用的包（即如图：灰色的import）（附：官方帮助文档）</title>
+      <link href="/2018/07/03/idea%E5%AF%BC%E5%8C%85/"/>
+      <url>/2018/07/03/idea%E5%AF%BC%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-055500.png"  alt="">jsp中的无用包;<br><img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-055525.png"  alt="">类中的无用包;<br>方法一：包以上：均可以一并。去掉当前页面或类下直接快捷键Ctrl + Alt + O;<br>方法二：推荐设置如图，配置随时自动清除，勾选如下选项即可<img src="/" class="lazyload" data-src="http://www.shieldofzues.cn/2020-06-02-055543.png"  alt=""><br>方法三：官方帮助文档（原理同上）：可用谷歌浏览器（或其他带有自动翻译功能的浏览器）查看，如果你英语足够好，可忽略前边的话。<br><a href="https://www.jetbrains.com/help/idea/creating-and-optimizing-imports.html#disable-import-popups" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/creating-and-optimizing-imports.html#disable-import-popups</a><br>对应idea版本可稍微注意，可能版本不同略有差异。<br>注意：此文档包含了idea使用的说明，可保存随时查看之需。希望帮到你~~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> idea </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> idea </tag>
             
