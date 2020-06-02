@@ -69,33 +69,6 @@
     
     
     <entry>
-      <title>升级swagger2.9.2 报错： java.lang.NumberFormatException 解决</title>
-      <link href="/2019/07/02/npoint/"/>
-      <url>/2019/07/02/npoint/</url>
-      
-        <content type="html"><![CDATA[<p>此处是”老外”的BB叨：<a href="https://github.com/springfox/springfox/issues/2265" target="_blank" rel="noopener">https://github.com/springfox/springfox/issues/2265</a><br>异常截图：<img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053326.png"  alt=""><br>进源码发现 <img src="/" class="lazyload" data-src="http://qiniu.shieldofzues.cn/2020-06-02-053359.png"  alt=""><br>在使用@ApiModelProperty(value = “xx” , example=”xx “)注解时，会校验实体属性类型，若该类型是Integer，example默认为””导致转换异常。<br>解决办法（测试有效）：排除springfox-swagger2 引入的swagger-annotations、swagger-models 1.5.20版本，手动引入1.5.21版本的jar。</p><pre><code>&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;    &lt;exclusions&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;        &lt;/exclusion&gt;        &lt;exclusion&gt;            &lt;groupId&gt;io.swagger&lt;/groupId&gt;            &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;        &lt;/exclusion&gt;    &lt;/exclusions&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;    &lt;version&gt;2.9.2&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-annotations&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt;    &lt;groupId&gt;io.swagger&lt;/groupId&gt;    &lt;artifactId&gt;swagger-models&lt;/artifactId&gt;    &lt;version&gt;1.5.21&lt;/version&gt;&lt;/dependency&gt;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> swagger </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> idea </tag>
-            
-            <tag> swagger </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>代码生成</title>
       <link href="/2019/07/02/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/"/>
       <url>/2019/07/02/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/</url>
